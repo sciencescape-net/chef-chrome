@@ -4,6 +4,7 @@ apt_repository 'google-chrome' do
   components %w(main)
   key node['chrome']['apt_key']
   action :nothing
+  arch 'amd64'
 end.run_action(:add)
 
 package "google-chrome-#{node['chrome']['track']}" do
